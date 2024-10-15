@@ -1,0 +1,22 @@
+{
+  "name": "bugsnag-agent",
+  "version": "1.0.0",
+  "description": "Bugsnag Agent for Vercel",
+  "main": "api/bugsnag.ts",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod"
+  },
+  "dependencies": {
+    "@vercel/node": "^2.15.1",
+    "axios": "^1.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.4",
+    "vercel": "^28.18.3"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
