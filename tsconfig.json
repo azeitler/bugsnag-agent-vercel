@@ -8,6 +8,6 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist"
   },
-  "include": ["api/**/*"],
+  "include": ["api/**/*", "tests/**/*"],
   "exclude": ["node_modules"]
 }

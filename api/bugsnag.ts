@@ -28,7 +28,7 @@ function handleCORS(res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS, POST, HEAD');
   res.setHeader('Access-Control-Allow-Headers', '*');
-  res.status(200).end('OK');
+  res.status(200).end();
 }
 
 function handleStatus(res: VercelResponse) {
@@ -49,7 +49,8 @@ async function handleBugsnagForward(req: VercelRequest, res: VercelResponse) {
   });
 
   try {
-    const response = await axios.post(BUGSNAG_ENDPOINT, body, { headers });
+    console.log("Forwarding to Bugsnag", body, headers);
+    const response = await axios.post(BUGSNAG_ENDPOINT, body, { headers: headers });
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json({
       message: 'Successfully forwarded to Bugsnag',
