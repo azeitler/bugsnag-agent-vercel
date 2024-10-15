@@ -25,15 +25,6 @@ describe('Bugsnag Agent', () => {
     const errorName = 'TestError';
     const errorMessage = 'This is a test error';
 
-    // const notifyPromise = new Promise((resolve) => {
-    //   Bugsnag.addOnError((event) => {
-    //     expect(event.errors[0].errorClass).toBe(errorName);
-    //     expect(event.errors[0].errorMessage).toBe(errorMessage);
-    //     resolve(true);
-    //     return true;
-    //   });
-    // });
-
     Bugsnag.notify(new Error(errorMessage), (event) => {
       event.errors[0].errorClass = errorName;
       return true;
@@ -46,22 +37,10 @@ describe('Bugsnag Agent', () => {
     const errorName = 'HandledTestError';
     const errorMessage = 'This is a handled test error';
 
-    // const notifyPromise = new Promise((resolve) => {
-    //   Bugsnag.addOnError((event) => {
-    //     expect(event.errors[0].errorClass).toBe(errorName);
-    //     expect(event.errors[0].errorMessage).toBe(errorMessage);
-    //     expect(event.severity).toBe('warning');
-    //     resolve(true);
-    //     return true;
-    //   });
-    // });
-
     Bugsnag.notify(new Error(errorMessage), (event) => {
       event.errors[0].errorClass = errorName;
       event.severity = 'warning';
       return true;
     });
-
-    // await expect(notifyPromise).resolves.toBe(true);
   });
 });
