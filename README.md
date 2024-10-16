@@ -31,7 +31,7 @@ This project implements a Bugsnag Agent using Vercel Functions and TypeScript. I
 3. Create a `.env` file in the root directory with the following content:
    ```
    BUGSNAG_API_KEY=your_bugsnag_api_key_here
-   AGENT_URL=http://localhost:3000/api/bugsnag
+   AGENT_URL=http://localhost:3000
    ```
    Replace `your_bugsnag_api_key_here` with your actual Bugsnag API key.
 

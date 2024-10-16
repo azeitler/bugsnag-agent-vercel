@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const AGENT_URL = process.env.AGENT_URL || 'http://localhost:3000/api/bugsnag';
+const AGENT_URL = process.env.AGENT_URL || 'http://localhost:3000';
 const BUGSNAG_API_KEY = process.env.BUGSNAG_API_KEY;
 
 if (!BUGSNAG_API_KEY) {
